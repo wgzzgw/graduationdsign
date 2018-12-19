@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.design.renthouse.mapper.HouseMapper">
+    <resultMap type="com.design.renthouse.entity.House" id="house">
+        <id column="house_id" jdbcType="INTEGER" property="houseId" />
+        <result column="house_desc" jdbcType="VARCHAR" property="houseDesc"/>
+        <result column="house_model" jdbcType="VARCHAR" property="houseModel"/>
+        <result column="house_area" jdbcType="VARCHAR" property="houseArea"/>
+        <result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
+        <result column="house_type" jdbcType="VARCHAR" property="houseType"/>
+        <result column="house_price" jdbcType="INTEGER" property="housePrice"/>
+        <result column="house_address" jdbcType="VARCHAR" property="houseAddress"/>
+        <result column="house_image" jdbcType="VARCHAR" property="houseImage"/>
+        <result column="community_name" jdbcType="VARCHAR" property="communityName"/>
+        <result column="house_linkman" jdbcType="VARCHAR" property="houseLinkMan"/>
+        <result column="house_oriented" jdbcType="VARCHAR" property="houseOriented"/>
+        <result column="house_detailsimg" jdbcType="VARCHAR" property="houseDetailsImg"/>
+        <result column="publisher" jdbcType="VARCHAR" property="publisher"/>
+        <result column="publish_time" jdbcType="DATE" property="publishTime"/>
+    </resultMap>
+    <insert id="addNewHouse" parameterType="com.design.renthouse.entity.House">
+		insert into
+			house
+		values
+		(	0,
+			#{houseDesc},
+			#{houseModel},
+			#{houseArea},
+			#{houseFloor},
+			#{houseType},
+			#{housePrice},
+			#{houseAddress},
+			#{houseImage},
+			#{communityName},
+			#{houseLinkMan},
+			#{houseOriented},
+			#{houseDetailsImg},
+			#{publisher},
+			NOW()
+		)
+	</insert>
+	<!-- 查找用户发布的房源信息 -->
+	<select id="findHouseByUser" parameterType="com.design.renthouse.entity.Page" resultMap="house">
+		select * from house where publisher = #{publisher} limit #{page},#{limit}
+	</select>
+</mapper>

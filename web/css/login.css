@@ -1,0 +1,121 @@
+.redColor{
+    color: #C40000 !important;
+}
+nav.top{
+    background-color: #F5F5F5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom:1px solid  #e7e7e7;
+}
+nav.top span, nav.top a{
+    color: #999;
+    margin: 0px 10px 0px 10px;
+}
+nav.top a:hover{
+    color: #C40000;
+    text-decoration: none;
+}
+.search{
+    margin:26px;
+    padding:1px 8px;
+}
+div#carousel-example-generic{
+    width:100%;
+    margin:0 auto;
+}
+div.item img{
+    width:100%;
+}
+.list_control_bar{
+    height: 50px;
+    border-bottom: 2px solid #ffc601;
+    margin: 40px auto;
+    padding-left: 0px;
+}
+.list_title{
+    width: 115px;
+    height: 50px;
+    background-color: #ffc601;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+}
+.list-group ul li{
+    float: left;
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    font-family: '微软雅黑';
+}
+.click-this a{
+    color: #ffc601;
+}
+.l{
+    float:left;
+}
+.r{
+    float:right;
+}
+/*房屋详细信息*/
+.house-detail{
+    width: 1140px;
+    height: auto;
+}
+.show-image{
+    position: relative;
+    float: left;
+}
+.show-details{
+    width: 628px!important;
+    float: left;
+    margin-left: 31px;
+    margin-top: -5px;
+}
+.house-title{
+    position: relative;
+    margin-top: -2px;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+.house-title a{
+    float: left;
+    max-width: 512px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-size: 24px;
+    font-weight: 700;
+}
+.house-about,.house-address{
+    font-size: 14px;
+    color: #1b1b1b!important;
+    margin-top: 28px;
+}
+.flag-line{
+    margin: 0px 10px;
+}
+.show-price{
+    position: relative;
+    right: 0;
+    float: right;
+    color: #ffc601;
+    text-align: right;
+}
+.show-price .sale-price {
+    position: relative;
+    top: 2px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'dinot-bold';
+}
+.show-price .sale-unit {
+    margin-left: 1px;
+    font-size: 14px;
+}

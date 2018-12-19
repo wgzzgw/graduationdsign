@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.design.renthouse.mapper.UserMapper">
+    <resultMap type="com.design.renthouse.entity.Users" id="users">
+        <id column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="user_password" jdbcType="VARCHAR" property="userPassword"/>
+        <result column="user_phone" jdbcType="VARCHAR" property="userPhone"/>
+        <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+    </resultMap>
+    <!-- 注册 -->
+    <insert id="regist" parameterType="com.design.renthouse.entity.Users">
+		insert into users values(0,#{userName},#{userPassword},#{userPhone},#{userNickname})
+	</insert>
+    <!-- 登录 -->
+    <select id="login" resultMap="users" parameterType="com.design.renthouse.entity.Users">
+		select user_id,user_name,user_password,user_phone,user_nickname from users
+		where user_name=#{userName} and user_password=#{userPassword}
+	</select>
+    <!--修改密码-->
+    <update id="updateUserPwd" parameterType="com.design.renthouse.entity.Users">
+		UPDATE users
+		SET user_password = #{userPassword}
+		WHERE
+			user_id = #{userId}
+	</update>
+    <!-- 检查旧密码 -->
+    <select id="checkOldPwd" resultMap="users" parameterType="com.design.renthouse.entity.Users">
+		select * from users where user_password = #{userPassword} and user_id = #{userId}
+	</select>
+</mapper>
