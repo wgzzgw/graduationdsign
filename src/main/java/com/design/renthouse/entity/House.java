@@ -1,5 +1,7 @@
 package com.design.renthouse.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /*
@@ -20,6 +22,7 @@ public class House {
     private String houseOriented;//房屋朝向
     private String houseDetailsImg;//房屋详细图片
     private String publisher;//房屋发布人
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date publishTime;//房屋发布时间
 
     public House() {

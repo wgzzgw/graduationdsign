@@ -23,4 +23,17 @@ public class HouserServiceImpl implements IHouserService {
     public List<House> findHouseByUser(Page page) {
         return mapper.findHouseByUser(page);
     }
+
+    @Override
+    public List<House> findAllHouseByUser(Page page) {
+        return mapper.findAllHouseByUser(page);
+    }
+    @Override
+    public int deleteUserHouse(int houseId) {
+        return mapper.deleteUserHouse(houseId);
+    }
+    @Override
+    public House findHouseDetailsById(int houseId) {
+        return mapper.findHouseDetailsById(houseId);
+    }
 }

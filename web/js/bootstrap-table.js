@@ -3152,7 +3152,7 @@
   ]
 
   $.BootstrapTable = BootstrapTable
-  $.fn.bootstrapTable = function (option, ...args) {
+   $.fn.bootstrapTable = function (option, ...args) {
     let value
 
     this.each((i, el) => {

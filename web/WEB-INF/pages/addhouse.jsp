@@ -209,7 +209,7 @@
         function initSingleInput(ctrlName){
             var control = $('#' + ctrlName);
             control.fileinput({
-                uploadUrl: "addHouse/insert.do", //上传的地址
+                uploadUrl: ".././addHouse/insert.do", //上传的地址
                 allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
                 //uploadExtraData:{"id": 1, "fileName":'123.mp3'},
                 uploadAsync: true, //默认异步上传
@@ -244,7 +244,7 @@
             var control = $('#' + ctrlName);
             control.fileinput({
                 language: 'zh', //设置语言
-                uploadUrl: "addHouse/insert2.do", //上传的地址
+                uploadUrl: ".././addHouse/insert2.do", //上传的地址
                 allowedFileExtensions: ['jpg', 'gif', 'png'],//接收的文件后缀
                 //uploadExtraData:{"id": 1, "fileName":'123.mp3'},
                 uploadAsync: true, //默认异步上传

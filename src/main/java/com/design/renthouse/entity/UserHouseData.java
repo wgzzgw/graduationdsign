@@ -8,19 +8,19 @@ import java.util.List;
 public class UserHouseData {
     private int code;//状态吗
     private String msg;//状态短语
-    private int count;//房子数量
+    private int total;//房子数量
     private List<House> data;//房源具体数据
 
-    public UserHouseData(String msg, int count, List<House> data) {
+    public UserHouseData(String msg, int total, List<House> data) {
         this.msg = msg;
-        this.count = count;
+        this.total = total;
         this.data = data;
     }
 
-    public UserHouseData(int code, String msg, int count, List<House> data) {
+    public UserHouseData(int code, String msg, int total, List<House> data) {
         this.code = code;
         this.msg = msg;
-        this.count = count;
+        this.total = total;
         this.data = data;
     }
 
@@ -43,12 +43,12 @@ public class UserHouseData {
         this.msg = msg;
     }
 
-    public int getCount() {
-        return count;
+    public int getTotal() {
+        return total;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setTotal(int total) {
+        this.total = total;
     }
 
     public List<House> getData() {

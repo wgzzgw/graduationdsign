@@ -18,4 +18,23 @@ public interface IHouserService {
      * @return
      */
     public List<House> findHouseByUser(Page page);
+    /**
+     * 查询用户发布的房源信息
+     * @param
+     * @return
+     */
+    public List<House> findAllHouseByUser(Page page);
+    /**
+     *  删除用户发布的房源信息
+     * @param houseId
+     * @return
+     */
+    public int deleteUserHouse(int houseId);
+    /**
+     * 通过id查询房屋详情
+     * @param houseId
+     * @return
+     */
+    public House findHouseDetailsById(int houseId);
+
 }

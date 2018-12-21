@@ -40,7 +40,34 @@
 		)
 	</insert>
 	<!-- 查找用户发布的房源信息 -->
+	<!--/*select * from house where publisher = #{publisher}  ORDER BY ${sortName} ${sortOrder},house_id  ${sortOrder} limit #{page},#{limit}*/-->
 	<select id="findHouseByUser" parameterType="com.design.renthouse.entity.Page" resultMap="house">
-		select * from house where publisher = #{publisher} limit #{page},#{limit}
+		select * from house
+		<where>
+			<if test="publisher!=null">
+				and publisher = #{publisher}
+			</if>
+			<if test="searchkey !=null and searchkey !=''">
+				and community_name like concat('%',#{searchkey},'%')
+			</if>
+		</where>
+		ORDER BY ${sortName} ${sortOrder},house_id  ${sortOrder} limit #{page},#{limit}
 	</select>
+	<!-- 查找用户发布的房源信息(总数) -->
+	<select id="findAllHouseByUser" parameterType="com.design.renthouse.entity.Page" resultMap="house">
+		select * from house where publisher = #{publisher}
+	</select>
+	<!-- 删除用户发布的房源信息 -->
+	<delete id="deleteUserHouse" parameterType="int">
+		delete from house where house_id=#{houseId}
+	</delete>
+	<!-- 房屋详细信息 -->
+	<select id="findHouseDetailsById" parameterType="int" resultMap="house">
+		SELECT *
+		FROM
+			house
+		WHERE
+			house_id=#{houseId}
+	</select>
+
 </mapper>
