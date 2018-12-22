@@ -69,5 +69,23 @@
 		WHERE
 			house_id=#{houseId}
 	</select>
+	<!-- 修改用户发布的房源信息 -->
+	<update id="updateHouse" parameterType="com.design.renthouse.entity.House">
+		UPDATE house
+		SET
+			house_desc = #{houseDesc},
+			house_model = #{houseModel},
+			house_area = #{houseArea},
+			house_floor = #{houseFloor},
+			house_type = #{houseType},
+			house_price = #{housePrice},
+			house_address = #{houseAddress},
+			house_oriented = #{houseOriented},
+			house_linkman = #{houseLinkMan},
+			community_name = #{communityName},
+			publish_time=#{publishTime}
+		WHERE
+			house_id = #{houseId}
+	</update>
 
 </mapper>

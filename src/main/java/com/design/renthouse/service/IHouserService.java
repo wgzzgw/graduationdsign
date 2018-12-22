@@ -36,5 +36,11 @@ public interface IHouserService {
      * @return
      */
     public House findHouseDetailsById(int houseId);
+    /**
+     * 修改用户发布的房源信息
+     * @param house
+     * @return
+     */
+    public int updateHouse(House house);
 
 }

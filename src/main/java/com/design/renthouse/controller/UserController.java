@@ -1,17 +1,23 @@
 package com.design.renthouse.controller;
 
+import com.design.renthouse.entity.House;
 import com.design.renthouse.entity.Users;
+import com.design.renthouse.service.IHouserService;
 import com.design.renthouse.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("user")
 public class UserController {
     @Autowired
     private IUserService service;
+    @Autowired
+    private IHouserService dao;
     @RequestMapping("toUserSystem")
     public String toUserSystemPage() {
         return "customer.jsp";
@@ -42,5 +48,11 @@ public class UserController {
     @RequestMapping("toUserRentalPage")
     public String toUserRentalPage() {
         return "myrental.jsp";
+    }
+    @RequestMapping("toUpdateHousePage")
+    public String toUpdatePage(int houseId,HttpServletRequest request) {
+        House house = dao.findHouseDetailsById(houseId);
+        request.getSession().setAttribute("House", house);
+        return "updatehouse.jsp";
     }
 }

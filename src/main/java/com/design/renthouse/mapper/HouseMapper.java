@@ -13,4 +13,5 @@ public interface HouseMapper {
     public List<House> findAllHouseByUser(Page page);//查询自己发布的房源总数
     public int deleteUserHouse(int houseId);//删除用户发布的房源信息
     public House findHouseDetailsById(int houseId);//通过id查询房屋详情
+    public int updateHouse(House house);//修改用户发布的房源信息
 }

@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
@@ -63,6 +64,14 @@ public class HouseController {
         if(n>0) {
             return "OK";
         }
+        return "FAIL";
+    }
+    @RequestMapping("updateHouse")
+    @ResponseBody
+    public String updateHouse(@RequestBody House house) {
+        int n = service.updateHouse(house);
+        if(n>0)
+            return "OK";
         return "FAIL";
     }
 }

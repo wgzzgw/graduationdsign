@@ -21,7 +21,7 @@
    http://www.springframework.org/schema/cache/spring-cache-4.0.xsd">
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/graduation_design?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=true"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/graduation_design?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;useSSL=true&amp;characterEncoding=UTF-8"/>
         <property name="username" value="root"/>
         <property name="password" value="15251104118wgz"/>
         <property name="maxTotal" value="255"/>

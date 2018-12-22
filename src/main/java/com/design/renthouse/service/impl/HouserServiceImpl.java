@@ -36,4 +36,8 @@ public class HouserServiceImpl implements IHouserService {
     public House findHouseDetailsById(int houseId) {
         return mapper.findHouseDetailsById(houseId);
     }
+    @Override
+    public int updateHouse(House house) {
+        return mapper.updateHouse(house);
+    }
 }
