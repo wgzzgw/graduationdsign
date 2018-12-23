@@ -42,5 +42,25 @@ public interface IHouserService {
      * @return
      */
     public int updateHouse(House house);
-
+    /**
+     * 首页信息展示
+     * @return
+     */
+    public List<House> findHomeInfo();
+    /**
+     * 条件查询
+     * @param keywords
+     * @return
+     */
+    public List<House> findHouseByLike(String keywords);
+    /**
+     * 降序查询
+     * @return
+     */
+    public List<House> findHouseOrderByDesc();
+    /**
+     * 升序序查询
+     * @return
+     */
+    public List<House> findHouseOrderByAsc();
 }

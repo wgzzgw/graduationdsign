@@ -55,4 +55,8 @@ public class UserController {
         request.getSession().setAttribute("House", house);
         return "updatehouse.jsp";
     }
+    @RequestMapping("welcome")
+    public String toWelcomePage() {
+        return "welcome.jsp";
+    }
 }

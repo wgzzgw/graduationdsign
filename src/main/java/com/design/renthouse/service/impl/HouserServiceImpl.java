@@ -40,4 +40,20 @@ public class HouserServiceImpl implements IHouserService {
     public int updateHouse(House house) {
         return mapper.updateHouse(house);
     }
+    @Override
+    public List<House> findHomeInfo() {
+        return mapper.findHomeInfo();
+    }
+    @Override
+    public List<House> findHouseByLike(String keywords) {
+        return mapper.findHouseByLike(keywords);
+    }
+    @Override
+    public List<House> findHouseOrderByAsc() {
+        return mapper.findHouseOrderByAsc();
+    }
+    @Override
+    public List<House> findHouseOrderByDesc() {
+        return mapper.findHouseOrderByDesc();
+    }
 }

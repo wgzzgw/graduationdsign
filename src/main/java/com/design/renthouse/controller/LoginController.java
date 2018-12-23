@@ -27,7 +27,7 @@ public class LoginController {
     }
     @RequestMapping("indexx")
     public String toIndexPage() {
-        return "index.jsp";
+        return "redirect:http://localhost:8088/homepage/toIndexPage.do";
     }
     @RequestMapping("regist")
     @ResponseBody
@@ -68,6 +68,6 @@ public class LoginController {
     @RequestMapping("signout")
     public String signout(HttpSession session) {
         session.invalidate();
-        return "index.jsp";
+        return "redirect:http://localhost:8088/homepage/toIndexPage.do";
     }
 }

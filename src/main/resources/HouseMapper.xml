@@ -87,5 +87,40 @@
 		WHERE
 			house_id = #{houseId}
 	</update>
+	<!-- 首页信息查询 -->
+	<select id="findHomeInfo" resultMap="house">
+		SELECT
+			house_id,
+			house_desc,
+			house_model,
+			house_area,
+			house_type,
+			house_price,
+			house_floor,
+			house_address,
+			house_image
+		FROM
+			house
+	</select>
+	<!-- 条件搜索 -->
+	<select id="findHouseByLike" parameterType="string" resultMap="house">
+		SELECT
+			*
+		FROM
+			house h
+		WHERE
+			CONCAT(
+				h.community_name,
+				h.house_desc,
+				h.house_model
+			) LIKE CONCAT("%", #{keywords}, "%")
+	</select>
+	<select id="findHouseOrderByDesc" resultMap="house">
+		SELECT * FROM house h ORDER BY house_price DESC
+	</select>
+
+	<select id="findHouseOrderByAsc" resultMap="house">
+		SELECT * FROM house h ORDER BY house_price ASC
+	</select>
 
 </mapper>
