@@ -1,0 +1,47 @@
+nav.top{
+    background-color: #F5F5F5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom:1px solid  #e7e7e7;
+}
+.redColor{
+    color: #C40000 !important;
+}
+nav.top span, nav.top a{
+    color: #999;
+    margin: 0px 10px 0px 10px;
+}
+nav.top a:hover{
+    color: #C40000;
+    text-decoration: none;
+}
+.details-head{
+    padding-top: 40px;
+    padding-bottom: 35px;
+    background-color: #fafafa;
+}
+.title-wrapper{
+    width: 1140px;
+    margin: 0 auto;
+}
+.details-head .left-con .house-title {
+    max-width: 88%;
+    font-weight: normal;
+    color: #1b1b1b;
+    font-size: 30px;
+}
+.details-head .left-con .tags {
+    font-size: 14px;
+    color: #aeaeae;
+    overflow: hidden;
+    clear: both;
+}
+.details-head .left-con .tags span {
+    float: left;
+    display: block;
+    max-width: 570px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
