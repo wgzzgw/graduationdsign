@@ -2,54 +2,30 @@ package com.design.renthouse.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.io.Serializable;
 import java.util.Date;
 
-/*
-* 房屋
-* */
-public class House  implements Serializable {
-
-    private static final long serialVersionUID = 7140889164456308723L;
+public class UserOrder {
+    private int orderId;//订单ID
     private int houseId;//房屋ID
-    private String houseDesc;//房屋描述
-    private String houseModel;//房屋规模
-    private String houseArea;//房屋面积
-    private String houseFloor;//房屋楼层
-    private String houseType;//房屋类型
-    private int housePrice;//房屋价格
-    private String houseAddress;//房屋地址
-    private String houseImage;//房屋图片
-    private String communityName;//房屋所在小区
-    private String houseLinkMan;//房屋经纪人
-    private String houseOriented;//房屋朝向
-    private String houseDetailsImg;//房屋详细图片
-    private String publisher;//房屋发布人
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date publishTime;//房屋发布时间
+    private Date orderTime;//订单时间
+    private String orderUser;//房东姓名
+    private String houseDesc;//房源描述
+    private String houseModel;//房源规模
+    private String houseArea;//房源面积
+    private String houseFloor;//房源楼层
+    private String houseType;//出租方式
+    private int housePrice;//房源价格
+    private String houseAddress;//房源地址
+    private String houseImage;//房源简介图
+    private String communityName;//小区名
+    private String houseLinkMan;//联系电话
+    private String houseOriented;//房屋朝向
 
-    public House() {
-    }
-
-    public House(String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType, int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan, String houseOriented, String houseDetailsImg, String publisher, Date publishTime) {
-        this.houseDesc = houseDesc;
-        this.houseModel = houseModel;
-        this.houseArea = houseArea;
-        this.houseFloor = houseFloor;
-        this.houseType = houseType;
-        this.housePrice = housePrice;
-        this.houseAddress = houseAddress;
-        this.houseImage = houseImage;
-        this.communityName = communityName;
-        this.houseLinkMan = houseLinkMan;
-        this.houseOriented = houseOriented;
-        this.houseDetailsImg = houseDetailsImg;
-        this.publisher = publisher;
-        this.publishTime = publishTime;
-    }
-
-    public House(int houseId, String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType, int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan, String houseOriented, String houseDetailsImg, String publisher, Date publishTime) {
+    public UserOrder(int houseId, Date orderTime, String orderUser, String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType, int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan, String houseOriented) {
         this.houseId = houseId;
+        this.orderTime = orderTime;
+        this.orderUser = orderUser;
         this.houseDesc = houseDesc;
         this.houseModel = houseModel;
         this.houseArea = houseArea;
@@ -61,9 +37,51 @@ public class House  implements Serializable {
         this.communityName = communityName;
         this.houseLinkMan = houseLinkMan;
         this.houseOriented = houseOriented;
-        this.houseDetailsImg = houseDetailsImg;
-        this.publisher = publisher;
-        this.publishTime = publishTime;
+    }
+
+    public UserOrder(Date orderTime, String orderUser, String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType, int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan, String houseOriented) {
+        this.orderTime = orderTime;
+        this.orderUser = orderUser;
+        this.houseDesc = houseDesc;
+        this.houseModel = houseModel;
+        this.houseArea = houseArea;
+        this.houseFloor = houseFloor;
+        this.houseType = houseType;
+        this.housePrice = housePrice;
+        this.houseAddress = houseAddress;
+        this.houseImage = houseImage;
+        this.communityName = communityName;
+        this.houseLinkMan = houseLinkMan;
+        this.houseOriented = houseOriented;
+    }
+
+    public UserOrder(int orderId, int houseId, Date orderTime, String orderUser, String houseDesc, String houseModel, String houseArea, String houseFloor, String houseType, int housePrice, String houseAddress, String houseImage, String communityName, String houseLinkMan, String houseOriented) {
+        this.orderId = orderId;
+        this.houseId = houseId;
+        this.orderTime = orderTime;
+        this.orderUser = orderUser;
+        this.houseDesc = houseDesc;
+        this.houseModel = houseModel;
+        this.houseArea = houseArea;
+        this.houseFloor = houseFloor;
+        this.houseType = houseType;
+        this.housePrice = housePrice;
+        this.houseAddress = houseAddress;
+        this.houseImage = houseImage;
+        this.communityName = communityName;
+        this.houseLinkMan = houseLinkMan;
+        this.houseOriented = houseOriented;
+    }
+
+    public UserOrder() {
+    }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public int getHouseId() {
@@ -72,6 +90,22 @@ public class House  implements Serializable {
 
     public void setHouseId(int houseId) {
         this.houseId = houseId;
+    }
+
+    public Date getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(Date orderTime) {
+        this.orderTime = orderTime;
+    }
+
+    public String getOrderUser() {
+        return orderUser;
+    }
+
+    public void setOrderUser(String orderUser) {
+        this.orderUser = orderUser;
     }
 
     public String getHouseDesc() {
@@ -160,29 +194,5 @@ public class House  implements Serializable {
 
     public void setHouseOriented(String houseOriented) {
         this.houseOriented = houseOriented;
-    }
-
-    public String getHouseDetailsImg() {
-        return houseDetailsImg;
-    }
-
-    public void setHouseDetailsImg(String houseDetailsImg) {
-        this.houseDetailsImg = houseDetailsImg;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public Date getPublishTime() {
-        return publishTime;
-    }
-
-    public void setPublishTime(Date publishTime) {
-        this.publishTime = publishTime;
     }
 }

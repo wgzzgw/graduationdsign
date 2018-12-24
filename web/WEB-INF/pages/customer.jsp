@@ -50,7 +50,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="/user/updaten.do" target="mainFrame">我的租房信息</a>
+                        <a href="/order/myorder.do" target="mainFrame">我的租房信息</a>
                     </li>
                     <li>
                         <a href="/user/updaten.do" target="mainFrame">修改我的密码</a>

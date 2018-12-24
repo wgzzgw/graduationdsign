@@ -45,3 +45,166 @@ nav.top a:hover{
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
 }
+.wrapper{
+    height: auto;
+    overflow: hidden;
+}
+.wrapper .breadcrumbb{
+    margin: 20px 0px;
+}
+.l {
+    float: left;
+}
+.r{
+    float: right;
+}
+.carousel-image{
+    width: 600px;
+}
+div#carousel-example-generic{
+    width:100%;
+    margin:0 auto;
+}
+#carousel-example-generic > .carousel-inner > .item{
+    height: 450px;
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.details-info{
+    /*width: 480px;*/
+    padding: 10px 50px;
+    box-sizing: border-box;
+}
+.details-info .show-price{
+    color: #ffc601;
+    text-align: left;
+}
+.details-info .show-price  {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'dinot-bold';
+}
+.show-price .sale-unit {
+    margin-left: 1px;
+    font-size: 14px;
+}
+.area {
+    color: #c9c9c9;
+    font-size: 14px;
+    padding-right: 10px;
+}
+.show-price .sale-price {
+    position: relative;
+    top: 2px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'dinot-bold';
+}
+.show-house-name{
+    width: 100%;
+    height: 120px;
+}
+.show-house-name .field{
+    color: #aeaeae;
+    display: block;
+    width: 95px;
+    float: left;
+}
+.show-house-name .name{
+    display: inline-block;
+}
+.show-house-name span{
+    line-height: 30px;
+}
+.house-model{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+}
+.house-model ul li{
+    width: 33.3%;
+    height: 100px;
+    text-align: center;
+    padding-top: 20px;
+    box-sizing: border-box;
+    float: left;
+}
+.house-model ul li span{
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.house-model ul li p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 7px;
+}
+.order-btn-container{
+    width: 100%;
+    height: 100px;
+}
+.order-btn-container .order-btn{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background-color: #ffc601;
+    border: none;
+    outline: none;
+    color: #fff;
+    margin-left:90px ;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.anchor-title{
+    width: 740px;
+    height: 100px;
+    clear: both;
+    margin-top: 40px;
+    line-height: 120px;
+    font-size: 20px;
+    color: #6e6e6e;
+    border-bottom: 1px solid #e2e2e2;
+}
+.household-appliances{
+    width: 740px;
+    height: 240px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.household-appliances ul li {
+    display: block;
+    width: 88px;
+    margin-left: 15px;
+    padding-top: 10px;
+    float: left;
+    text-align: center;
+}
+.household-appliances ul li span {
+    display: block;
+    color: #d9d9d9;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 34px;
+}
+.household-appliances ul li i {
+    width: 49px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 43px;
+    color: #757575;
+    display: block;
+    margin: 0 auto;
+}
+.footer {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 10;
+    background-color:#DFDFDF;
+}

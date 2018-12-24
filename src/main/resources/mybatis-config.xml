@@ -6,5 +6,6 @@
     <mappers>
         <mapper resource="UserMapper.xml"/>
         <mapper resource="HouseMapper.xml"/>
+        <mapper resource="OrderMapper.xml"/>
     </mappers>
 </configuration>
