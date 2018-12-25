@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: yy
-  Date: 2018/12/17
-  Time: 20:54
+  Date: 2018/12/25
+  Time: 20:33
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -62,24 +62,23 @@
                 }
             });
             $("#submit").click(function(event){
-                    $("#oldpass").blur();
-                    $("#newpass").blur();
-                    $("#newpassAgain").blur();
+                $("#oldpass").blur();
+                $("#newpass").blur();
+                $("#newpassAgain").blur();
                 if(!error1&&!error2&&!error3) {
                     var oldpass = $("#oldpass").val();
                     var newpass = $("#newpass").val();
                     $.ajax({
-                        url:".././user/updateUserPwd.do",
+                        url:".././admin/updateAdminPwd.do",
                         async:false,
                         type:"POST",
                         data:{
-                            id:${loginUser.userId},
-                            newPwd:newpass,
-                            oldPwd:oldpass
+                            oldPwd:oldpass,
+                            newPwd:newpass
                         },
                         success:function (res) {
                             if(res=='OK'){
-                               /* $("#modifySuccess").css({'display':'inline'});*/
+                                /* $("#modifySuccess").css({'display':'inline'});*/
                                 $("#modifySuccess").show().fadeOut(3000);
                                 $("#oldpass").prop("value","");
                                 $("#newpass").prop("value","");
@@ -103,7 +102,10 @@
     </script>
 </head>
 <body>
-<div  style="margin-top:100px;width:120%;">
+<div   style="width: 500px;margin-top: 40px">
+    <fieldset>
+        <legend style="font-size: 26px">修改管理员密码</legend>
+    </fieldset>
     <form  role="form">
         <div class="form-group">
             <label for="oldpass" class="col-sm-2 control-label">旧密码</label>
@@ -129,12 +131,12 @@
             <button type="reset"  class="btn btn-primary" id="reset" style="text-align:center;">重置输入</button>
         </div>
     </form>
-</div>
-<div id="modifySuccess" class="alert alert-success alert-dismissable" style="width:50%;margin-left:40%;display:none;">
-    <strong>Success!</strong> 你已成功修改密码！
-</div>
-<div id="failregist1" class="alert alert-success alert-dismissable" style="width:50%;margin-left:40%;display:none;">
-    <strong>修改失败！</strong> 请检查您的旧密码是否正确！！！
+    <div id="modifySuccess" class="alert alert-success alert-dismissable" style="width:50%;margin-left:40%;display:none;">
+        <strong>Success!</strong> 你已成功修改密码！
+    </div>
+    <div id="failregist1" class="alert alert-success alert-dismissable" style="width:50%;margin-left:40%;display:none;">
+        <strong>修改失败！</strong> 请检查您的旧密码是否正确！！！
+    </div>
 </div>
 </body>
 </html>

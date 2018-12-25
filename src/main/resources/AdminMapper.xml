@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.design.renthouse.mapper.AdminMapper">
+    <resultMap type="com.design.renthouse.entity.Admin" id="admin">
+        <id column="admin_id" jdbcType="INTEGER" property="adminId" />
+        <result column="admin_username" jdbcType="VARCHAR" property="adminUsername"/>
+        <result column="admin_password" jdbcType="VARCHAR" property="adminPassword"/>
+    </resultMap>
+    <!-- 管理员登录 -->
+    <select id="adminAccess" resultMap="admin" parameterType="com.design.renthouse.entity.Admin">
+		select * from admin where admin_username=#{adminUsername} and admin_password=#{adminPassword}
+	</select>
+    <select id="checkAdminPwd" parameterType="com.design.renthouse.entity.Admin" resultMap="admin">
+		select * from admin where admin_password=#{adminPassword} and admin_id = #{adminId}
+	</select>
+    <update id="updateAdminPwd" parameterType="com.design.renthouse.entity.Admin">
+		update admin set
+			admin_password=#{adminPassword}
+		where admin_id=#{adminId}
+	</update>
+</mapper>
