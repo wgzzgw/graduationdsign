@@ -40,7 +40,7 @@ public class HouseController {
         if (sortName.equals("publishTime")) sortName = "publish_time";
         Page p = new Page();
         Users u = (Users) request.getSession().getAttribute("loginUser");
-        String publisher = u.getUserNickname();
+        String publisher = u.getUserName();
         p.setPublisher(publisher);
         p.setLimit(limit);
         p.setPage(page);

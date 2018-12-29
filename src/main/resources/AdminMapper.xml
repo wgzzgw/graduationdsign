@@ -6,7 +6,33 @@
         <result column="admin_username" jdbcType="VARCHAR" property="adminUsername"/>
         <result column="admin_password" jdbcType="VARCHAR" property="adminPassword"/>
     </resultMap>
-    <!-- 管理员登录 -->
+    <resultMap type="com.design.renthouse.entity.Users" id="AllUserMap">
+        <id column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="user_password" jdbcType="VARCHAR" property="userPassword"/>
+        <result column="user_phone" jdbcType="VARCHAR" property="userPhone"/>
+        <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+    </resultMap>
+	<resultMap type="com.design.renthouse.entity.House" id="AllHouseMap">
+		<id column="house_id" jdbcType="INTEGER" property="houseId" />
+		<result column="house_desc" jdbcType="VARCHAR" property="houseDesc"/>
+		<result column="house_model" jdbcType="VARCHAR" property="houseModel"/>
+		<result column="house_area" jdbcType="VARCHAR" property="houseArea"/>
+		<result column="house_floor" jdbcType="VARCHAR" property="houseFloor"/>
+		<result column="house_type" jdbcType="VARCHAR" property="houseType"/>
+		<result column="house_price" jdbcType="INTEGER" property="housePrice"/>
+		<result column="house_address" jdbcType="VARCHAR" property="houseAddress"/>
+		<result column="house_image" jdbcType="VARCHAR" property="houseImage"/>
+		<result column="community_name" jdbcType="VARCHAR" property="communityName"/>
+		<result column="house_linkman" jdbcType="VARCHAR" property="houseLinkMan"/>
+		<result column="house_oriented" jdbcType="VARCHAR" property="houseOriented"/>
+		<result column="house_detailsimg" jdbcType="VARCHAR" property="houseDetailsImg"/>
+		<result column="publisher" jdbcType="VARCHAR" property="publisher"/>
+		<result column="publish_time" jdbcType="DATE" property="publishTime"/>
+	</resultMap>
+
+
+	<!-- 管理员登录 -->
     <select id="adminAccess" resultMap="admin" parameterType="com.design.renthouse.entity.Admin">
 		select * from admin where admin_username=#{adminUsername} and admin_password=#{adminPassword}
 	</select>
@@ -18,4 +44,36 @@
 			admin_password=#{adminPassword}
 		where admin_id=#{adminId}
 	</update>
+    <!-- 查询所有用户 -->
+    <select id="findAllUser" resultMap="AllUserMap">
+		select * from users
+	</select>
+    <delete id="deleteUser" parameterType="int">
+		delete from users where user_id=#{userId}
+	</delete>
+    <select id="findUserById" parameterType="int" resultMap="AllUserMap">
+		select * from users where user_id = #{userId}
+	</select>
+    <update id="updateUser" parameterType="com.design.renthouse.entity.Users">
+		update users set
+			user_password = #{userPassword},
+			user_phone=#{userPhone},
+			user_nickname = #{userNickname}
+		where user_id=#{userId}
+	</update>
+	<select id="findAllHouse" resultMap="AllHouseMap" parameterType="com.design.renthouse.entity.Page">
+		select * from house
+		 <where>
+			 <if test="searchkey !=null and searchkey !=''">
+				 and community_name like concat('%',#{searchkey},'%')
+			 </if>
+		 </where>
+		ORDER BY ${sortName} ${sortOrder},house_id  ${sortOrder} limit #{page},#{limit}
+	</select>
+	<select id="findAllHouseNum" resultType="int">
+		select count(*) from house;
+	</select>
+	<delete id="deleteHouse" parameterType="int">
+		delete from house where house_id=#{houseId}
+	</delete>
 </mapper>

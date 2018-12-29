@@ -279,7 +279,12 @@
             <div class="input-group" style="padding-left: 250px">
                 <button class="btn"  id="updateHouse-btn"  type="submit">立即修改</button>
                 <span>&emsp;&emsp;</span>
-                <a href="/user/toUserRentalPage.do" class="btn-primary btn">返回</a>
+                <c:if test="${not empty loginUser}">
+                    <a href="/user/toUserRentalPage.do" class="btn-primary btn">返回</a>
+                </c:if>
+                <c:if test="${empty loginUser}">
+                    <a href="/admin/toAllHousePage.do" class="btn-primary btn">返回</a>
+                </c:if>
                 <span>
                     <p style="display:none;margin-left:40%;">修改成功！！</p>
                     <h5 style="display: none;margin-left:40%;">请修改表单数据为正确再发布！</h5>

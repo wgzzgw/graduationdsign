@@ -291,7 +291,7 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">房源描述</label>
             <div class="col-sm-10">
-                <input type="hidden" id="publisher" value="${loginUser.userNickname }">
+                <input type="hidden" id="publisher" value="${loginUser.userName }">
                 <textarea class="form-control" id="houseDesc"  placeholder="请输入内容"></textarea><span id="houseDescTip" style="display:none;color:red;"></span>
             </div>
         </div>

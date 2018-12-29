@@ -50,10 +50,10 @@
                 <a href="/admin/toAllUserPage.do" target="mainFrame" >查看所有用户</a>
             </li>
             <li role="presentation">
-                <a href="" target="mainFrame" >所有房源信息</a>
+                <a href="/admin/toAllHousePage.do" target="mainFrame" >所有房源信息</a>
             </li>
             <li role="presentation">
-                <a href="" target="mainFrame" >添加房源信息</a>
+                <a href="/house/addhouse.do" target="mainFrame" >添加房源信息</a>
             </li>
         </ul>
     </div>
